@@ -1,0 +1,47 @@
+{
+  "name": "ljs",
+  "description": "Liam's JavaScript toolbox",
+  "homepage": "http://liam-brown.com/ljs",
+  "keywords": [
+    "util",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "Liam Brown <liambrownweb@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/liambrownweb/ljs.git"
+  },
+  "main": "ljs.js",
+  "version": "1.8.3",
+  "devDependencies": {
+    "coveralls": "^2.11.2",
+    "docco": "*",
+    "eslint": "1.10.x",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.13",
+    "karma-jasmine": "*",
+    "karma-qunit": "~0.1.4",
+    "nyc": "^2.1.3",
+    "qunit-cli": "~0.2.0",
+    "qunitjs": "^1.18.0",
+    "uglify-js": "2.4.x"
+  },
+  "scripts": {
+    "test": "npm run test-node && npm run lint",
+    "coverage": "nyc npm run test-node && nyc report",
+    "coveralls": "nyc npm run test-node && nyc report --reporter=text-lcov | coveralls",
+    "lint": "eslint ljs.js test/*.js",
+    "test-node": "qunit-cli test/*.js",
+    "test-browser": "npm i karma-phantomjs-launcher && karma start",
+    "build": "uglifyjs ljs.js -c \"evaluate=false\" --comments \"/    .*/\" -m --source-map ljs-min.map --source-map-url \" \" -o ljs-min.js",
+    "doc": "docco ljs.js"
+  },
+  "license": "MIT",
+  "files": [
+    "ljs.js",
+    "ljs-min.js",
+    "ljs-min.map"
+  ]
+}

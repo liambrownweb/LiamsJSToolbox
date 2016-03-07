@@ -1,0 +1,6 @@
+{
+  "name": "ljs",
+  "main": "ljs.js",
+  "keywords": ["util", "server", "client", "browser"],
+  "ignore" : ["docs", "test", "*.yml", "CNAME", "index.html", "favicon.ico", "CONTRIBUTING.md", ".*", "package.json", "karma.*"]
+}

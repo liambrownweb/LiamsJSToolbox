@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>LJS Test Suite</title>
+
+		<link rel="shortcut icon" type="image/png" href="../node_modules/jasmine/node_modules/jasmine/images/jasmine_favicon.png">
+		<link href="../node_modules/jasmine/node_modules/jasmine/lib/jasmine-core/jasmine.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="vendor/qunit.css" type="text/css" media="screen">
+
+		<!-- Jasmine files -->
+		<script type="text/javascript" src="../node_modules/jasmine/node_modules/jasmine/lib/jasmine-core/jasmine.js"></script>
+		<script type="text/javascript" src="../node_modules/jasmine/node_modules/jasmine/src/html/TrivialReporter.js"></script>
+
+		<!-- CUSTOMIZE: The code to be tested and the tests -->
+		<script type="text/javascript" src="../ljs.js"></script>
+		<script>
+			function require() {
+				// do nothing, allows repeat.spec.js to require a node module
+			}
+		</script>
+		<script type="text/javascript" src="spec/ljs.spec.js"></script>
+
+		<script type="text/javascript">
+			(function() {
+			 var jasmineEnv = jasmine.getEnv();
+				 window.onload = function() {
+					 jasmineEnv.execute();
+				 };
+			 })();
+		</script>
+	</head>
+	<body>
+		<div id="qunit"></div>
+		<div id="exports" style="display: none"></div>
+		<script src="vendor/qunit.js"></script>
+		<script src="vendor/qunit-extras.js"></script>
+		<script src="../ljs.js"></script>
+		<script src="qunit-setup.js"></script>
+	</body>
+</html>
+
