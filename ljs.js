@@ -1,3 +1,8 @@
+/*
+ * Ljs, a JS toolbox library
+ * (C)2016 Liam Brown
+ * Subject to terms of the MIT license
+ */ 
 (function () {
 	var _ljs = {};
 	_ljs._error = function (message) {
